@@ -43,12 +43,13 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'django_filters',
     'drf_yasg',
-    'rest_framework_simplejwt',
-    'captcha',
-    'taggit',
-    'django_summernote',
-    'robots',
-    'django.contrib.sites',
+    
+    # 'rest_framework_simplejwt',
+    # 'captcha',
+    # 'taggit',
+    # 'django_summernote',
+    # 'robots',
+    # 'django.contrib.sites',
 
     
     # 'django_templated',
@@ -164,7 +165,20 @@ REST_FRAMEWORK = {
     ]
 }
 
+
+# restframework settings
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": [
+        "rest_framework.authentication.BasicAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.TokenAuthentication",
+        
+    ]
+}
+
+
 # restframework settings
 REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS":"rest_framework.schemas.coreapi.AutoSchema"
 }
+
